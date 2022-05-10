@@ -42,7 +42,7 @@ def main():
 def predict(image):
     classifier_model = "notebooks/saved_model/serialized_snake_classifier_model_not_tuned.h5"
     IMAGE_SHAPE = (180, 180,3)
-    model = load_model(classifier_model, compile=False, custom_objects={'KerasLayer': hub.KerasLayer})
+    model = load_model(classifier_model, compile=False)
     test_image = image.resize((180,180))
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
